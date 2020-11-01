@@ -1,0 +1,22 @@
+{
+    "name": "EPL-Liga",
+    "gcm_sender_id": "1064072543570",
+    "short_name": "EPL-Liga",
+    "description": "EPL-Liga",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#00897B",
+    "theme_color": "#00897B",
+    "icons": [
+        {
+            "src": "EPL-Logo192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "EPL-Logo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
