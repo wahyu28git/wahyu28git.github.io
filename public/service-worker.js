@@ -1,5 +1,5 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-service-worker.js');
-const CACHE_NAME = "bolaku3";
+const CACHE_NAME = "bolaku1";
 var urlsToCache = [
   "/",
   "/nav.html",
@@ -21,12 +21,11 @@ var urlsToCache = [
   "/js/req.js"
 ];
 
-workbox.routing.registerRoute(
-  new RegExp('/pages/'),
-    workbox.strategies.staleWhileRevalidate({
-        cacheName: 'pages'
-    })
-);
+ 
+if (workbox)
+  console.log(`Workbox berhasil dimuat`);
+else
+  console.log(`Workbox gagal dimuat`);
 
 workbox.precaching.precacheAndRoute([
   { url: '/index.html', revision: '1' },
@@ -36,11 +35,12 @@ workbox.precaching.precacheAndRoute([
   { url: '/js/req.js', revision: '1' },
 ]);
 
- 
-if (workbox)
-  console.log(`Workbox berhasil dimuat`);
-else
-  console.log(`Workbox gagal dimuat`);
+workbox.routing.registerRoute(
+  new RegExp('/pages/'),
+    workbox.strategies.staleWhileRevalidate({
+        cacheName: 'pages'
+    })
+);
 
 self.addEventListener('push', function(event) {
   var body;
