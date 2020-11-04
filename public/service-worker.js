@@ -1,5 +1,5 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
-const CACHE_NAME = "bolaku1";
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-service-worker.js');
+const CACHE_NAME = "bolaku3";
 var urlsToCache = [
   "/",
   "/nav.html",
